@@ -1,0 +1,24 @@
+{% extends "miApp/basegenerica.html" %}
+
+{% block content %}
+  <h1>{{ producto.categoria }}</h1>
+
+  {% if producto %}
+  <ul>
+
+    {% for producto in productos %}
+    <li>
+        <p><strong>Nombre:</strong> {{ producto.nombre }}</p> 
+        <p><strong>Precio:</strong> {{ producto.precio }}</p>
+        <p><strong>Stock actual:</strong> {{ producto.stockactual }}</p>
+        {% for proveedor in producto.proveedor_set.all %}
+        <p><strong>Proveedor:</strong> {{ proveedor.nombre }}</p>
+        {% endfor %}
+    </li>
+    {% endfor %}
+
+  </ul>
+  {% else %}
+    <p>No hay productos listados de esa categoria.</p>
+  {% endif %}
+{% endblock %}

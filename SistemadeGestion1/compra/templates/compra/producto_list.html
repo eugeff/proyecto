@@ -1,0 +1,19 @@
+{% extends "miApp/basegenerica.html" %}
+
+{% block content %}
+    <h1>Lista de productos</h1>
+
+    {% if producto_list %}
+    <ul>
+
+      {% for producto in producto_list %}
+      <li>
+        <a href="{{ producto.get_absolute_url }}">{{ producto.nombre }}</a> ({{producto.categoria}})
+      </li>
+      {% endfor %}
+
+    </ul>
+    {% else %}
+      <p>No hay productos registrados.</p>
+    {% endif %}
+{% endblock %}
