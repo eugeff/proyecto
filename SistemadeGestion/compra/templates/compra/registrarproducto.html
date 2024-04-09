@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" hfer="¨{% static 'css/style1.css' %}" media="screen,projection">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>Registrar producto</title>
+</head>
+<body >
+    <h1>Registrar producto</h1>
+    <form action="" method="post">
+        {% csrf_token %}
+        <div>
+            <label for="nombre">nombre:</label>
+            <input type='form-control' id="nombre" name="nombre">
+        </div>
+
+        <div class="mb-3">
+            <label for="precio">precio:</label>
+            <input class='form-control' type="number" id="precio" name="precio">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label" for="categoria">categoria:</label>
+            <input class='form-control' type="text" id="categoria" name="categoria">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label" for="stockactual">Stock actual:</label>
+            <input class='form-control' type="number" id="stockactual" name="stockactual">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label" for="proveedor">proveedor:</label>
+            <input class='form-control' type="text" id="proveedor" name="proveedor" placeholder="inserte DNI del proveedor">
+        </div>
+
+        <button class="btn btn-primary" type="submit" value="Agregar">Agregar producto</button>
+    </form>
+    <a href="{% url 'mostrarprod' %}">
+        Cancel</a>
+</body>
+</html>

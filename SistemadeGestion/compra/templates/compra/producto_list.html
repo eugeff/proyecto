@@ -1,0 +1,22 @@
+{% extends "compra/basegenerica.html" %}
+
+{% block content %}
+    <h1>Lista de productos</h1>
+
+    {% if producto_list %}
+    <ul>
+
+      {% for producto in producto_list %}
+
+      <li>
+        {{ producto.nombre }} - {{producto.categoria}} - {{producto.precio}} - {{producto.stockActual}} - {{producto.proveedor}}
+      </li>
+    
+      {% endfor %}
+
+    </ul>
+    {% else %}
+      <p>No hay productos registrados.</p>
+    {% endif %}
+    <a href="{% url 'registrarprod' %}">Registrar producto nuevo</a>
+{% endblock %}

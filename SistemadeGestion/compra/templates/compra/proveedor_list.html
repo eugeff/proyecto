@@ -1,0 +1,22 @@
+{% extends "compra/basegenerica.html" %}
+
+{% block content %}
+    <h1>Lista de proveedores</h1>
+
+    {% if proveedor_list %}
+    <ul>
+
+      {% for proveedor in proveedor_list %}
+      -<li>
+        <a href="{{ proveedor.get_absolute_url }}">{{ proveedor.nombre }}</a> {{proveedor.apellido}} 
+        <p>DNI Nº {{proveedor.dni}} </p>
+        <p>Provincia {{proveedor.provincia}} </p>
+      </li>
+      {% endfor %}
+
+    </ul>
+    {% else %}
+      <p>No hay proveedores registrados.</p>
+    {% endif %}
+    <a href="{% url 'registrarprov' %}">Registrar nuevo proveedor</a>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends "compra/basegenerica.html" %}
+
+{% block content %}
+<h1>Inicio del sistema de gestion</h1>
+
+  <p>Bienvenido al <em>sistema de gestion</em>, desarrollado para ordenar tu negocio.</p>
+
+<h2>Contenido actualizado</h2>
+
+  <p>El sistema cuenta con los siguientes registros:</p>
+  <ul>
+    <li><strong>Numero de productos:</strong> {{ numProd }}</li>
+    <li><strong>Productos electronicos:</strong> {{ numProdEle }}</li>
+    <li><strong>Electrodomesticos:</strong> {{ numProdElectrodom }}</li>
+    <li><strong>Productos para el hogar:</strong> {{ numProdHo }}</li>
+    <li><strong>Productos deportivos:</strong> {{ numProdDe }}</li>
+    <li><strong>Numero de proveedores:</strong> {{ numProv }}</li>
+  </ul>
+
+{% endblock %}
